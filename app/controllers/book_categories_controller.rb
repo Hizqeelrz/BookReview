@@ -12,7 +12,7 @@ class BookCategoriesController < ApplicationController
 		@book_category = BookCategory.new(category_params)
 
 		if @book_category.save
-			redirect_to root_path
+			redirect_to book_categories_path
 		else
 			render :new
 		end
