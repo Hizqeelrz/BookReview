@@ -8,6 +8,10 @@
 		<% @book_categories.each do |book_category| %>
 			<tr>
 				<td><%= book_category.name %></td>
+				<td class="btn-group">
+				<%= link_to "Edit", edit_book_category_path(book_category), class: "btn btn-primary btn-xs" %>
+				<%= link_to "delete", book_category, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger btn-xs" %>
+				</td>
 			</tr>
 		<% end -%>
 	</tbody>

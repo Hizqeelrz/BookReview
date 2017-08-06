@@ -30,7 +30,7 @@ class BookCategoriesController < ApplicationController
 		@book_category = BookCategory.find(params[:id])
 		
 		if @book_category.update(category_params)
-			redirect_to book_category_path(@book_category)
+			redirect_to book_categories_path
 		else
 			render :edit
 		end
