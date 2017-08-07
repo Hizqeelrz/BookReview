@@ -31,7 +31,7 @@
 				<ul class="dropdown-menu" role="menu">
 					<% BookCategory.all.each do |category| %>
 						<li>
-							<%= link_to category.name, books_path(category: category.name), class: "link" %>
+							<%= link_to category.name, books_path(book_category: category.name), class: "link" %>
 						</li>
 					<% end -%>
 				</ul>

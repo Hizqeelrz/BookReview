@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
 	def index
+		# we can pass any name in the params
 		if params[:book_category].blank?
 			@books = Book.all.order(created_at: :desc)
 		else
@@ -54,6 +55,6 @@ class BooksController < ApplicationController
 	private
 
 	def book_params
-		params.require(:book).permit(:title, :author, :description, :book_category_id)
+		params.require(:book).permit(:title, :author, :description, :book_category_id, :book_img)
 	end
 end
