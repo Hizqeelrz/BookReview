@@ -1,7 +1,12 @@
 class BooksController < ApplicationController
 
 	def index
-		@books = Book.all.order(created_at: :desc)
+		if params[:book_category].blank?
+			@books = Book.all.order(created_at: :desc)
+		else
+			@book_category_id = BookCategory.find_by(name: params[:book_category]).id
+			@books = Book.where(:book_category_id => @book_category_id).order(created_at: :desc)
+		end
 	end
 
 	def new
